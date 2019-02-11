@@ -1,14 +1,11 @@
 pipeline {
   agent {
-    dockerfile {
-      filename 'dockerfile'
-    }
-
+    dockerfile true
   }
   stages {
-    stage('') {
+    stage('test') {
       steps {
-        sh 'echo \'success\''
+        sh 'npm run deploy'
       }
     }
   }
