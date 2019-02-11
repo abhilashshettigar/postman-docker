@@ -17,6 +17,12 @@ pipeline {
     stage('Test') {
       steps {
         sh 'npm run deploy'
+          publishHTML (target: [
+      allowMissing: false,
+      alwaysLinkToLastBuild: false,
+      keepAll: true,
+      reportFiles: 'index.html',
+    ])
       }
     }
   }
