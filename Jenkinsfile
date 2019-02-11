@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('test') {
       steps {
-        sh 'npm run deploy'
+        echo 'test'
       }
     }
   }
