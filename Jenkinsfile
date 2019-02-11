@@ -1,15 +1,20 @@
 pipeline {
   agent {
-    dockerfile true
+    image 'node:10-alpine'
   }
    environment {
         CI = 'true'
         HOME="."
     }
   stages {
-    stage('test') {
+    stage('Install Dependecis') {
       steps {
-        echo 'test'
+        sh 'npm install && npm install -g http-server'
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'npm run deploy'
       }
     }
   }
