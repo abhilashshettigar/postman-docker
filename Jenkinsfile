@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage('Install Dependecis') {
       steps {
-        sh 'npm install && npm install -g http-server'
+        sh 'npm install && npm install http-server'
       }
     }
     stage('Test') {
